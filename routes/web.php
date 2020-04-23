@@ -57,6 +57,7 @@ Route::middleware(['auth', 'petugas'])->group(function () {
 Route::get('/user', function () {
     return view('Users.index');
 });
+Route::get('/history', 'TransaksiController@history');
 
 Auth::routes();
 

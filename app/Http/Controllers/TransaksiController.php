@@ -13,7 +13,14 @@ class TransaksiController extends Controller
         $data['siswa'] = User::select('users.id', 'users.name', 'kelas.nama_kelas')->join('kelas', 'users.id_kelas', '=', 'kelas.id')->where('status', 'siswa')->get();
         $data['tagihan'] = Tagihan::get();
         $data['transaksi'] = Transaksi::select('transaksi.created_at', 'users.nis', 'users.name', 'kelas.nama_kelas', 'tagihan.nama_tagihan', 'tagihan.harga')->join('tagihan', 'transaksi.id_tagihan', '=', 'tagihan.id')->join('users', 'transaksi.id_siswa', '=', 'users.id')->join('kelas', 'users.id_kelas', '=', 'kelas.id')->get();
-        return view('Transaksi.index', $data);
+        return view('Transaksi.index', $data);        
+    }
+
+    public function history() {
+        $data['siswa'] = User::select('users.id', 'users.name', 'kelas.nama_kelas')->join('kelas', 'users.id_kelas', '=', 'kelas.id')->where('status', 'siswa')->get();
+        $data['tagihan'] = Tagihan::get();
+        $data['transaksi'] = Transaksi::select('transaksi.created_at', 'users.nis', 'users.name', 'kelas.nama_kelas', 'tagihan.nama_tagihan', 'tagihan.harga')->join('tagihan', 'transaksi.id_tagihan', '=', 'tagihan.id')->join('users', 'transaksi.id_siswa', '=', 'users.id')->join('kelas', 'users.id_kelas', '=', 'kelas.id')->get();
+        return view('Users.index', $data);        
     }
 
     public function bayar(Request $request){
