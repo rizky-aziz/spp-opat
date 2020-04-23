@@ -29,11 +29,11 @@ Level Siswa
 - Lihat Histori Pembayaran
 
 ## Cara Install
-$ git clone https://github.com/pembayaran-spp.git 
-$ cd SPP-OPAT 
-$ composer update 
-$ php artisan migrate --seed 
-$ php artisan serve
+$ git clone https://github.com/rizky-aziz/spp-opat.git <br>
+$ cd spp-opat <br>
+$ composer update <br>
+$ php artisan migrate --seed <br>
+$ php artisan serve <br>
 
 Catatan : buat database dengan nama db_spp sebelum melakukan migrate.
 
